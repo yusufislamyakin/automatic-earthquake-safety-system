@@ -1,54 +1,68 @@
 
 # Automatic Earthquake Safety System
 
-An Arduino-based earthquake detection and automatic safety response prototype developed as an Electrical and Electronics Engineering project.
+An Arduino-based vibration detection and automatic warning prototype developed as an Electrical and Electronics Engineering project.
 
 ## Project Overview
 
-This project aims to detect sudden ground vibrations using an MPU6050 accelerometer and gyroscope sensor. An Arduino Uno processes the sensor data and activates warning outputs when predefined vibration conditions are met.
+This project demonstrates a sensor-based vibration monitoring and warning system using an MPU6050 accelerometer and gyroscope sensor with an Arduino Uno.
 
-The system is designed as an educational prototype to demonstrate sensor-based monitoring, embedded programming, and automatic response mechanisms.
+The system processes motion measurements and evaluates predefined vibration thresholds. When the warning condition is met, visual and audible alerts are activated, along with a relay control output.
+
+The project is an educational prototype and is not intended to predict earthquakes or replace certified earthquake early-warning systems.
 
 ## Hardware Components
 
 | Component | Function |
 |---|---|
-| Arduino Uno | Main control unit |
+| Arduino Uno | Main microcontroller |
 | MPU6050 | Acceleration and angular velocity measurement |
+| 16x2 I2C LCD | Vibration level and system status display |
 | Buzzer | Audible warning |
-| Relay Module | Switching control output |
 | LED | Visual warning |
-| 16x2 I2C LCD | System status display (planned) |
+| Relay Module | Switching control output |
 
 ## System Architecture
 
-**Sensor Layer:** MPU6050 collects motion data.
+**Sensor Layer:** MPU6050 measures acceleration and angular velocity.
 
-**Processing Layer:** Arduino Uno processes sensor measurements and evaluates detection conditions.
+**Processing Layer:** Arduino Uno performs sensor calibration, signal processing, vibration level calculation, and state evaluation.
 
-**Output Layer:** Buzzer, LED, and relay provide warning and control outputs.
+**Output Layer:** LCD, LED, buzzer, and relay provide system status and warning responses.
 
 ## Technologies
 
 - Arduino IDE
 - Embedded C/C++
-- MPU6050 Sensor
-- MATLAB / Simulink (planned)
-- LTspice (planned)
+- MPU6050
+- I2C Communication
+- Sensor Calibration
+- Moving Average Filtering
+- State Machine Logic
 
 ## Development Status
 
-This project is currently under development.
+### Implemented in the prototype
 
-- [ ] MPU6050 sensor integration
-- [ ] Sensor calibration
-- [ ] Vibration detection algorithm
-- [ ] Signal filtering
-- [ ] Buzzer and LED control
-- [ ] Relay control and fail-safe logic
-- [ ] LCD integration
-- [ ] MATLAB / Simulink simulation
-- [ ] Hardware testing and validation
+- [x] Arduino Uno integration
+- [x] MPU6050 sensor integration
+- [x] Sensor baseline calibration
+- [x] Vibration level calculation (1–12 experimental scale)
+- [x] Moving average filtering
+- [x] NORMAL / WARNING state logic
+- [x] LCD display software integration
+- [x] Buzzer control software
+- [x] LED control software
+- [x] Relay control software
+
+### Remaining work
+
+- [ ] Validate the updated integrated firmware on physical hardware
+- [ ] Verify relay activation logic and switching behavior
+- [ ] Calibrate vibration thresholds through controlled experiments
+- [ ] Perform systematic hardware tests and document results
+- [ ] Develop MATLAB / Simulink simulation
+- [ ] Prepare circuit schematics and hardware documentation
 
 ## Project Structure
 
@@ -56,15 +70,20 @@ This project is currently under development.
 automatic-earthquake-safety-system/
 ├── docs/
 ├── firmware/
+│   └── earthquake_safety_system/
 ├── hardware/
 ├── simulations/
+│   ├── LTspice/
+│   └── MatlabSimulink/
 ├── data/
 └── README.md
 ```
 
-## Important Note
+## Limitations and Safety
 
-This project is an educational prototype and is not certified for real-world earthquake early warning or building safety applications.
+This project is an educational desktop prototype. Its vibration levels are experimental indicators and do not represent official earthquake magnitude or intensity scales.
+
+The updated firmware has not yet been fully validated on the physical prototype. The system is not certified for building protection, real-world earthquake early warning, or safety-critical electrical switching.
 
 ## License
 
