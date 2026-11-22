@@ -252,5 +252,5 @@ void loop() {
     Serial.println("NORMAL");
   }
 
-  delay(100);
+  delay(10);
 }
