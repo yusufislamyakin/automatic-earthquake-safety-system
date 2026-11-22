@@ -102,3 +102,24 @@ This is an educational prototype.
 No direct connection to building electrical installations, gas systems, or critical safety equipment is intended.
 
 All initial relay tests must be performed using low-voltage loads in a controlled environment.
+
+## Prototype Implementation
+
+The system was physically assembled and tested as a desktop prototype.
+
+The prototype included:
+
+- Arduino Uno
+- MPU6050 accelerometer and gyroscope
+- Buzzer
+- LED
+- Relay module
+- 16x2 I2C LCD display
+
+The sensor was placed on a table, and controlled manual shaking was applied to evaluate the system response.
+
+The prototype demonstrated sensor-based vibration detection and activation of the warning components.
+
+No installation or testing was performed in an actual building.
+
+The system has not been validated under real earthquake conditions.
